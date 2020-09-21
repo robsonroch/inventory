@@ -1,41 +1,45 @@
-package com.cbmer.inventory.services.validation.utils;
-
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import org.springframework.stereotype.Component;
-
-@Component
-public interface EscolheMethodTemplate<T> {
-
-	default String returnFieldValue(T obj) {		
-		List<Field> privateFields = Arrays.asList(obj.getClass().getDeclaredFields());
-		
-		String fieldValue = "sem valor";
-		
-		for (Field field : privateFields) {
-
-			field.setAccessible(true);
-
-			Object object;
-			try {
-				object = field.get(obj);
-				if (object != null && field.isAnnotationPresent(FieldToSave.class)) {
-					FieldToSave annotation = field.getAnnotation(FieldToSave.class);
-					if (annotation != null && !annotation.value().isEmpty()) {
-						fieldValue = annotation.value();
-					} 
-					
-				}
-			} catch (IllegalArgumentException | IllegalAccessException e) {
-				
-			}
-
-		}
-		
-		return fieldValue;
-	}
-
-}
+INDEX VERSION 1.131+/media/robson.rocha/Seagate Expansion Drive1/Cursos/cursoUdemy/Spring_Boot_Hibernate_REST_Ionic_JWT_S3_MySQL_MongoDB/workspace/.metadata/.plugins/org.eclipse.jdt.core
+3644446670.index
+2338691951.index
+3539432263.index
+962506731.index
+768333563.index
+3312640083.index
+461149550.index
+2990791567.index
+963828918.index
+2879232594.index
+3338270706.index
+3720381019.index
+502732891.index
+285360748.index
+2456930873.index
+2149745277.index
+613111555.index
+1359367911.index
+3217041195.index
+3953559615.index
+63800476.index
+1089239932.index
+1471251313.index
+459487680.index
+3672617320.index
+3204152724.index
+379435348.index
+4292616706.index
+2240177525.index
+3348372267.index
+3409004437.index
+2333399629.index
+1995862036.index
+4073069407.index
+880073562.index
+411805030.index
+2727965523.index
+4115145204.index
+4134090025.index
+991719916.index
+1374373819.index
+2687217951.index
+1066208340.index
+5990989.in
